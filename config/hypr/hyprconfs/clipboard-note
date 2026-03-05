@@ -1,0 +1,17 @@
+#!/bin/bash
+
+FILE="$HOME/.cache/clipboard_notes.txt"
+
+mkdir -p "$HOME/.cache"
+touch "$FILE"
+
+case "$1" in
+    add)
+        INPUT=$(rofi -dmenu -p "Ghi chú:")
+        [ -n "$INPUT" ] && echo "$INPUT" >> "$FILE"
+        ;;
+    view)
+        CHOICE=$(cat "$FILE" | rofi -dmenu -p "Chọn để copy:")
+        [ -n "$CHOICE" ] && echo -n "$CHOICE" | wl-copy
+        ;;
+esac
