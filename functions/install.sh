@@ -59,7 +59,7 @@ run_stage_1() {
         clone_args="--depth=1"
     else
         info "Using stable installation (cloning latest tag)."
-        latest_tag=$(git ls-remote --tags https://github.com/nixuris/serein.git | awk '{print $2}' | grep -v '{}' | awk -F/ '{print $3}' | sort -V | tail -n 1)
+        latest_tag=$(git ls-remote --tags https://github.com/Kenny11423/hyprarch.git | awk '{print $2}' | grep -v '{}' | awk -F/ '{print $3}' | sort -V | tail -n 1)
         if [ -z "$latest_tag" ]; then
             error "Could not find latest stable tag. Please try the edge installation."
         fi
@@ -73,7 +73,7 @@ run_stage_1() {
             error "Existing persistent installation found at $persistent_dir. Please remove it first or use 'serein update'."
         fi
         info "Cloning repository to $persistent_dir..."
-        git clone https://github.com/nixuris/serein.git $clone_args "$persistent_dir" || error "Failed to clone repository."
+        git clone https://github.com/Kenny11423/hyprarch.git $clone_args "$persistent_dir" || error "Failed to clone repository."
         
         info "Re-executing installer from the persistent location..."
         exec bash "$persistent_dir/functions/install.sh" --run-stage-2 --persistent "$FULL_INSTALL_CHOICE" "$PARU_INSTALL_CHOICE" "$REBOOT_CHOICE"
@@ -82,7 +82,7 @@ run_stage_1() {
         # One-Time Installation
         local temp_dir=$(mktemp -d)
         info "Cloning repository to temporary directory: $temp_dir"
-        git clone https://github.com/nixuris/serein.git $clone_args "$temp_dir" || error "Failed to clone repository."
+        git clone https://github.com/Kenny11423/hyprarch.git $clone_args "$temp_dir" || error "Failed to clone repository."
 
         info "Executing installer from the temporary location..."
         exec bash "$temp_dir/functions/install.sh" --run-stage-2 --one-time "$FULL_INSTALL_CHOICE" "$PARU_INSTALL_CHOICE" "$REBOOT_CHOICE"
