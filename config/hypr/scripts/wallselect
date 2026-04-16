@@ -22,7 +22,7 @@ trap cleanup SIGINT SIGTERM
 
 # Verify required tools exist
 command -v magick >/dev/null 2>&1 || { echo "Error: imagemagick required but not installed."; exit 1; }
-command -v swww >/dev/null 2>&1 || { echo "Error: swww required but not installed."; exit 1; }
+command -v awww >/dev/null 2>&1 || { echo "Error: awww required but not installed."; exit 1; }
 command -v rofi >/dev/null 2>&1 || { echo "Error: rofi required but not installed."; exit 1; }
 
 # Calculate monitor resolution and icon size
@@ -67,8 +67,8 @@ BASENAME=$(basename "$SELECTION")
 echo "Setting wallpaper: $BASENAME"
 
 # Set wallpaper
-swww query >/dev/null 2>&1 || swww init
-swww img "${WALL_DIR}${BASENAME}" --transition-bezier .43,1.19,1,.4 --transition-fps 144 --transition-type grow --transition-duration 2 --transition-pos 0.680,0.970
+awww query >/dev/null 2>&1 || awww init
+awww img "${WALL_DIR}${BASENAME}" --transition-bezier .43,1.19,1,.4 --transition-fps 144 --transition-type grow --transition-duration 2 --transition-pos 0.680,0.970
 
 # Save the current wallpaper name
 echo "$BASENAME" > "$WALL_DIR/wallpaper_tracking.txt"
