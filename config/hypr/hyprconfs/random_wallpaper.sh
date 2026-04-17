@@ -25,7 +25,10 @@ WALLPAPER=$(find "$WALL_DIR" -type f \( \
 # nếu không có ảnh thì thoát
 [ -z "$WALLPAPER" ] && exit 0
 
-# set wallpaper (fallback nếu transition lỗi)
+# Cập nhật tracking để các công cụ khác biết ảnh hiện tại là gì (tùy chọn)
+echo $(basename "$WALLPAPER") > "$WALL_DIR/wallpaper_tracking.txt"
+
+# set wallpaper
 awww img "$WALLPAPER" \
   --transition-type grow \
   --transition-duration 1 \
