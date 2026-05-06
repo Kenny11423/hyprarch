@@ -1,4 +1,4 @@
-    * {
+       * {
     border: none;
     border-radius: 0px;
     font-family: "JetBrainsMono Nerd Font";
@@ -40,14 +40,8 @@ tooltip label {
 }
 
 #workspaces button.active {
-    /* background: #2B2F38; */
     color: #86afef;
-    /* margin-left: 1px;
-    padding-left: 4px;
-    padding-right: 8px;
-    margin-right: 1px; */
     animation: ws_active 20s ease-in-out 1;
-    /* transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682); */
 }
 
 #workspaces button.persistent:nth-child(2){
@@ -106,7 +100,7 @@ tooltip label {
 #custom-l_end,
 #custom-r_end{
     color: #86afef;
-    font-size: 14;
+    font-size: 14px;
     background: #242830;
     opacity: 1;
     margin: 6px 0px 6px 0px;
@@ -119,6 +113,7 @@ tooltip label {
   background: #1b1e25;
 }
 #custom-logo,
+#custom-wallpaper,
 #clock,
 #custom-power,
 #custom-swaync,
@@ -127,7 +122,7 @@ tooltip label {
 #bluetooth,
 #battery{
     color: #86afef;
-    font-size: 14;
+    font-size: 14px;
     background: #242830;
     opacity: 1;
     border: none;
@@ -139,7 +134,8 @@ tooltip label {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-#custom-logo{
+#custom-logo,
+#custom-wallpaper{
   margin-right: 6px;
 }
 #backlight,
@@ -152,17 +148,18 @@ tooltip label {
     color: #86afef;
 }
 
-#custom-logo{
+#custom-logo,
+#custom-wallpaper{
     color:#1b1e25;
     background: #86afef;
-    font-size: 23;
+    font-size: 23px;
     padding-left: 4px;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
 #network{
-  font-size: 14;
+  font-size: 14px;
   padding-left: 5px;
   padding-right: 5px;
 
