@@ -1,8 +1,7 @@
-# Serein
 A simple Hyprland environment.
 # Installation
 
-To install the Serein environment, run the following command in your terminal:
+To install the environment, run the following command in your terminal:
 
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/nixuris/serein/main/functions/install.sh)
@@ -22,18 +21,18 @@ The installation script is designed to be flexible and safe, with the following 
     *   **Edge**: Performs a shallow clone of the main branch for those who want the latest, cutting-edge features.
 *   **System Update**: Before installing any packages, the script will update your system using `paru -Syu`.
 *   **Minimal and Full Installation Types**:
-    *   **Minimal (Recommended)**: Installs the bare minimum packages and symlink/copy the bare minimum config files required for the Serein environment to function.
+    *   **Minimal (Recommended)**: Installs the bare minimum packages and symlink/copy the bare minimum config files required for the environment to function.
     *   **Full**: Installs all the packages, and symlink/copy extra configurations like alacritty, fastfetch, fish, neovim, ranger, udiskie.
 *   **Safe Configuration Handling**: Before removing any of your existing configurations, the script will list all the configurations that will be replaced and ask for your confirmation.
 
 # Serein CLI
 
-The `serein` command-line tool is the central hub for managing your Serein environment. It provides a robust set of features for updating, managing configurations, and maintaining your Hyprland setup.
+The `serein` command-line tool is the central hub for managing your environment. It provides a robust set of features for updating, managing configurations, and maintaining your Hyprland setup.
 
 ## Commands
 
 *   `serein update [stable|edge] [--force|-f]`:
-    *   Updates your system and Serein configurations.
+    *   Updates your system and configurations.
     *   `stable`: Updates to the latest stable release tag.
     *   `edge` (default): Performs a `git pull` to get the latest bleeding-edge features.
     *   `--force`, `-f`: Force update even if on the latest version.
