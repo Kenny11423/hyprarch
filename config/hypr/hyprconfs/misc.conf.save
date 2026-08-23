@@ -23,19 +23,18 @@ decoration {
   }
 
   shadow {
-    color=rgba(0, 0, 0, 0.25)
+    color=rgba(00000040)
     enabled=true
     range=10
     render_power=2
   }
   active_opacity=1.000000
-  inactive_opacity=0.850000
+  inactive_opacity=0.950000
   rounding=20
 }
 
 dwindle {
   preserve_split=true
-  pseudotile=true
 }
 
 general {
