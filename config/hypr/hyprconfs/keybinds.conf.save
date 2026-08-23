@@ -1,10 +1,3 @@
-#██╗  ██╗███████╗██╗   ██╗██████╗ ██╗███╗   ██╗██████╗ ███████╗
-#██║ ██╔╝██╔════╝╚██╗ ██╔╝██╔══██╗██║████╗  ██║██╔══██╗██╔════╝
-#█████╔╝ █████╗   ╚████╔╝ ██████╔╝██║██╔██╗ ██║██║  ██║███████╗
-#██╔═██╗ ██╔══╝    ╚██╔╝  ██╔══██╗██║██║╚██╗██║██║  ██║╚════██║
-#██║  ██╗███████╗   ██║   ██████╔╝██║██║ ╚████║██████╔╝███████║
-#╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═════╝ ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝
-
 $scrdir=~/.config/hypr/scripts
 bind=SUPER, Return, exec, $terminal
 bind=SUPER, L, exec, $scrdir/session # lock screen, shutdown, reboot, logout
@@ -30,7 +23,7 @@ bind=SUPER ALT, S, exec, $scrdir/scrshot --now #screenshot full screen instantly
 
 bind=SUPER, H, exec, $scrdir/hints # keybinding sheet
 bind=SUPER, V, exec,$scrdir/clip #clipboard SUPER + Del to wipe, CTRL + Del to delete one entry
-bind=SUPER, Period, exec, $scrdir/emoji # emojis
+bind=SUPER, D, exec, $scrdir/emoji # emojis
 # Switch focus, workspace, move window to other workspaces, resize windows and mouse control
 bind=ALT, left, movefocus, l
 bind=ALT, right, movefocus, r
@@ -50,4 +43,14 @@ bindm=SUPER, mouse:273, resizewindow
 #bind=SUPER ALT, S, movetoworkspacesilent, special
 #bind=SUPER, S, togglespecialworkspace,
 #random wallpaper
-bind = SUPER SHIFT, B, exec, /home/kennysk/.config/hypr/hyprconfs/random_wallpapeqr.sh
+bind = SUPER SHIFT, B, exec, /home/kennysk/.config/hypr/hyprconfs/random_wallpaper.sh
+bind = SUPER, C, exec, ~/.config/hypr/hyprconfs/clipboard-note add
+bind = SUPER SHIFT, C, exec, ~/.config/hypr/hyprconfs/clipboard-note view
+
+#Media player
+bind=SUPER, COMMA, exec, playerctl previous
+bind=SUPER, Period, exec, playerctl next
+bind=SUPER, SLASH, exec, playerctl play-pause
+
+bind=SUPER, Z, exec, zen-browser
+bind=SUPER, E, exec, nautilus
