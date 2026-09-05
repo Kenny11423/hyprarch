@@ -1,10 +1,13 @@
 configuration {
-    modi:                        "dmenu";
+    modi:                        "Static,Video";
+    sidebar-mode:                true;
     show-icons:                  true;
     drun-display-format:         "{name}";
     hover-select:                true;
     me-select-entry:             "";
     me-accept-entry:             [ MousePrimary, MouseSecondary, MouseDPrimary ];
+    display-Static:              "Static";
+    display-Video:               "Video";
 }
 
 * {
@@ -21,7 +24,7 @@ window {
     enabled:                     true;
     fullscreen:                  false;
     width:                       460px;
-    height:                      580px;
+    height:                      630px;
     location:                    west;
     anchor:                      west;
     x-offset:                    72px;
@@ -38,9 +41,33 @@ window {
 mainbox {
     enabled:                     true;
     orientation:                 vertical;
-    children:                    [ "listview", "inputbar" ];
+    children:                    [ "mode-switcher", "listview", "inputbar" ];
     background-color:            transparent;
     spacing:                     0px;
+}
+
+mode-switcher {
+    enabled:                     true;
+    spacing:                     12px;
+    margin:                      20px 22px 0px 22px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+button {
+    padding:                     10px;
+    border-radius:               10px;
+    background-color:            #232b39cc;
+    text-color:                  #d9e5ff99;
+    cursor:                      pointer;
+    font:                        "JetBrains Mono Nerd Font 9";
+    horizontal-align:            0.5;
+}
+
+button selected {
+    background-color:            @selected;
+    text-color:                  #111217;
+    font:                        "JetBrains Mono Nerd Font 9 Bold";
 }
 
 inputbar {
